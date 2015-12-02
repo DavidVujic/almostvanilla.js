@@ -31,7 +31,7 @@ var almostvanilla = (function () {
 		if (!e) {
 			return window.event;
 		}
-		
+
 		return e;
 	};
 
@@ -39,7 +39,7 @@ var almostvanilla = (function () {
 		var evt = getEvent(e);
 
 		if (!e) {
-			return evt.srcElement;	
+			return evt.srcElement;
 		}
 
 		return evt.target;
@@ -55,7 +55,7 @@ var almostvanilla = (function () {
 		if (el.addEventListener) {
 			el.addEventListener(eventName, handler);
 		} else {
-			el.attachEvent('on' + eventName, function() {
+			el.attachEvent('on' + eventName, function () {
 				handler.call(el);
 			});
 		}
@@ -77,26 +77,33 @@ var almostvanilla = (function () {
 		if (elm.nodeType !== 1) {
 			return false;
 		}
-		
+
 		var node = elm.getAttributeNode(attrName);
 
 		return (node && node.name === attrName);
 	};
-	
+
 	var getClosestElement = function (elm, attributeName) {
 		var closest = null;
 		var parent = elm;
-		
+
 		while (parent !== window.document) {
 			if (hasAttribute(parent, attributeName)) {
 				closest = parent;
 				break;
 			}
-			
+
 			parent = parent.parentNode;
 		}
-		
+
 		return closest;
+	};
+
+	var isArray = function (obj) {
+		var func = Object.prototype.toString;
+		var expected = func.call([]);
+
+		return func.call(obj) === expected;
 	};
 
 	return {
@@ -105,6 +112,7 @@ var almostvanilla = (function () {
 		evTarget: getEventTarget,
 		trigger: triggerEvent,
 		addListeners: addListenersFor,
-		getClosest: getClosestElement
+		getClosest: getClosestElement,
+		isArray: isArray
 	};
 }());
