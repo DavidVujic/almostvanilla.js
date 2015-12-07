@@ -1,0 +1,35 @@
+{
+  "name": "almostvanilla.js",
+  "version": "1.0.0",
+  "description": "Almost vanilla JavaScript - features simplifying DOM headaches",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidVujic/almostvanilla.js.git"
+  },
+  "keywords": [
+    "Vanilla",
+    "JavaScript",
+    "DOM"
+  ],
+  "author": "David Vujic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidVujic/almostvanilla.js/issues"
+  },
+  "homepage": "https://github.com/DavidVujic/almostvanilla.js#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-uglify": "^1.5.1",
+    "node-qunit-phantomjs": "^1.3.0",
+    "qunitjs": "^1.20.0"
+  }
+}

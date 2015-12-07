@@ -1,4 +1,5 @@
 /*global window:true */
+/* exported almostvanilla */
 
 var almostvanilla = (function () {
 	'use strict';
