@@ -78,9 +78,11 @@ var almostvanilla = (function () {
 			return false;
 		}
 
-		var node = elm.getAttributeNode(attrName);
+		if (!elm.getAttribute(attrName)) {
+			return false;
+		}
 
-		return (node && node.name === attrName);
+		return true;
 	};
 
 	var getClosestElement = function (elm, attributeName) {
@@ -113,6 +115,7 @@ var almostvanilla = (function () {
 		trigger: triggerEvent,
 		addListeners: addListenersFor,
 		getClosest: getClosestElement,
-		isArray: isArray
+		isArray: isArray,
+		hasAttribute: hasAttribute
 	};
 }());
